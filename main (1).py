@@ -1,22 +1,22 @@
-class Account:
-    def __init__(self):
-        self.balance=0
-        print('Your Account is Created.')
-    def deposit(self):
-        amount=int(input('Enter the amount to deposit:'))
-        self.balance+=amount
-        print('Your New Balance =%d' %self.balance)
-    def withdraw(self):
-        amount=int(input('Enter the amount to withdraw:'))
-        if(amount>self.balance):
-            print('Insufficient Balance!')
-        else:
-            self.balance-=amount
-        print('Your Remaining Balance =%d' %self.balance)
-    def enquiry(self):
-        print('Your Balance =%d' %self.balance)
+# Leap year
+"""
+year % 4==0  &
+year% 100 != 0 /
+year %400 == 0
 
-account= Account()
-account.deposit()
-account.withdraw()
-account.enquiry()
+"""
+
+
+def tsLeapYear(year):
+  if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    return True
+  else:
+    return False
+
+
+year = int(input("Enter a year :"))
+
+if tsLeapYear(year):
+  print('{}is a leap year.'.format(year))
+else:
+  print('{} is not a leap year.'.format(year))
